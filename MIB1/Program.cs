@@ -13,7 +13,6 @@ namespace MIB1
             ApplicationConfiguration.Initialize();
             PasswordsLogins.Init();
             Application.Run(new LoginForm());
-            Application.ApplicationExit += (s, e) => PasswordsLogins.Save();
         }
     }
 }

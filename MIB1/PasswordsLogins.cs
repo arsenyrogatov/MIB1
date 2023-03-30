@@ -136,7 +136,14 @@ namespace MIB1
                 return false;
             }
 
+            if (password.Contains('-'))
+            {
+                MessageBox.Show("Пароль содержит запрещенные символы!");
+                return false;
+            }
+
             loginpasswords.Add(login, password);
+            Save();
             MessageBox.Show("Успешно!");
             return true;
         }
@@ -205,6 +212,7 @@ namespace MIB1
             }
 
             loginpasswords[login] = pwd2;
+            Save();
             MessageBox.Show("Успешно!");
             return true;
         }
